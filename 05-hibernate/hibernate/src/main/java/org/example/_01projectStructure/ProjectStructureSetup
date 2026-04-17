@@ -1,0 +1,21 @@
+steps 1:
+Create a new Maven Project
+
+When Project is ready nowhere in the Project we mention we
+wanted to use hibernate
+
+step 2:
+Need to add Hibernate Library offcourse right :)
+
+step 3:Add hibernate dependency
+in your Pom.xml you will have dependencies
+Options there you will add hibernate Dependency
+
+
+step4: what we need to add
+1.jdbc Driver
+2.hibernate Dependnecy
+
+from mavenreposatory
+
+
