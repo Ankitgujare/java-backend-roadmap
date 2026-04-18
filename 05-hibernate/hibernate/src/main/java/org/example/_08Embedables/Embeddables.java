@@ -14,14 +14,14 @@ public class Embeddables {
         l1.setModel("Pavelion");
 
 
-        studentInfo s1=new studentInfo();
+        Employees s1=new Employees();
         s1.setName("Aman");
         s1.setGender("Male");
-        s1.setAge(110);
+        s1.setEmployeeId(007);
         s1.setLaptop(l1);
 
         SessionFactory sf= new Configuration()
-                .addAnnotatedClass(org.example._08Embedables.studentInfo.class)
+                .addAnnotatedClass(org.example._08Embedables.Employees  .class)
                 .configure()
                 .buildSessionFactory();
 

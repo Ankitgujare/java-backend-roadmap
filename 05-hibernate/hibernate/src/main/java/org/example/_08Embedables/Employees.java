@@ -5,26 +5,25 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class studentInfo {
+public class Employees {
     String name;
     String gender;
     @Id
-    int rollnumber;
+    int EmployeeId;
     Laptop laptop;
-
-
-    public String getName() {
-        return name;
-    }
 
     @Override
     public String toString() {
-        return "student{" +
+        return "Employees{" +
                 "name='" + name + '\'' +
                 ", gender='" + gender + '\'' +
-                ", age=" + rollnumber +
+                ", EmployeeId=" + EmployeeId +
                 ", laptop=" + laptop +
                 '}';
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
@@ -39,22 +38,19 @@ public class studentInfo {
         this.gender = gender;
     }
 
+    public int getEmployeeId() {
+        return EmployeeId;
+    }
+
+    public void setEmployeeId(int employeeId) {
+        EmployeeId = employeeId;
+    }
+
     public Laptop getLaptop() {
         return laptop;
     }
 
-
     public void setLaptop(Laptop laptop) {
         this.laptop = laptop;
     }
-
-    public int getAge() {
-        return rollnumber;
-    }
-
-    public void setAge(int age) {
-        this.rollnumber = age;
-    }
-
-
 }
