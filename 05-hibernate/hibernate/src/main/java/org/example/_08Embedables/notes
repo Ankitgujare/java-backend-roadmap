@@ -1,0 +1,42 @@
+:)
+
+till now we are happy with Primitives Types in a table
+but what if we wanted to store complex time in table
+Like laptop it has ram brand cpu gpu
+offcourse we can store it in string and then pass it
+
+
+but cant we create an another class Like Laptop and then store it
+along with employee
+
+
+Like
+
+@Entity
+class employee{
+
+int id;
+String name;
+String designation;
+Laptop laptop;
+
+}
+
+class Laptop{
+int ram;
+String brand;
+
+}
+
+so we want to embeded laptop in existing table and
+dont want to create a new table in that case we will do
+
+@Embedables
+class Laptop{
+int ram;
+String brand;
+
+}
+
+and know in our table we have the laptop details to
+which we have embeded

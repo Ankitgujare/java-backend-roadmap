@@ -1,6 +1,6 @@
 package org.example._02FailedAttempToStoreData;
 
-import org.example.student;
+import org.example._03SuccesfullAttempToSaveData.student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

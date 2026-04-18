@@ -1,4 +1,4 @@
-package org.example;
+package org.example._03SuccesfullAttempToSaveData;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
