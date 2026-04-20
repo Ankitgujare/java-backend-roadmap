@@ -10,28 +10,26 @@ import java.util.List;
 @Entity
 public class person {
     @Id
-    int pid;
-    String name;
-    int age;
-    @OneToMany
-    List<phone>phones;
+   private int personId;
+   private String name;
+   private String gender;
+   @OneToMany(mappedBy = "person")
+   private List<phone> phone;
 
-    @Override
-    public String toString() {
-        return "person{" +
-                "pid=" + pid +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", phone=" + phones +
-                '}';
+    public List<phone> getPhone() {
+        return phone;
     }
 
-    public int getPid() {
-        return pid;
+    public void setPhone(List<phone> phone) {
+        this.phone = phone;
     }
 
-    public void setPid(int pid) {
-        this.pid = pid;
+    public int getPersonId() {
+        return personId;
+    }
+
+    public void setPersonId(int personId) {
+        this.personId = personId;
     }
 
     public String getName() {
@@ -42,19 +40,11 @@ public class person {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public String getGender() {
+        return gender;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public List<phone> getPhones() {
-        return phones;
-    }
-
-    public void setPhones(List<phone> phones) {
-        this.phones = phones;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }

@@ -13,7 +13,7 @@ public class OnetoOne {
 
 
         phone p1=new phone();
-        p1.setPhoneId(2);
+//        /p1.setPhoneId(2);
         p1.setBrand("Samsung Galaxy");
         p1.setModel("s20");
 
@@ -21,8 +21,8 @@ public class OnetoOne {
         person person=new person();
         person.setName("Aniket");
 //        person.setPhone(p1);
-        person.setPid(101);
-        person.setAge(24);
+//        person.setPid(101);
+//        person.setAge(24);
 
 
 

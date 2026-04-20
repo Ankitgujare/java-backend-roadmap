@@ -11,30 +11,26 @@ import java.util.Arrays;
 public class oneToMany {
     public static void main(String[] args) {
 
-        //Now in this case One student will have Multiple Phones
-        //means List of Phones
-        //create a Phone Object
 
-        phone phone1=new phone();
-        phone1.setPhoneId(59);
-        phone1.setBrand("Samsung");
-        phone1.setModel("A12");
+        phone p1=new phone();
+        p1.setSerialNumber(3);
+        p1.setBrand("Samsung");
+        p1.setModel("s20");
 
-        phone phone2=new phone();
-        phone2.setPhoneId(60);
-        phone2.setBrand("oPPO");
-        phone2.setModel("X1");
+        phone p2=new phone();
+        p2.setSerialNumber(4);
+        p2.setBrand("Nokia");
+        p2.setModel("Lumia 820");
 
 
         person person=new person();
-        person.setName("John");
-        person.setAge(35);
-        person.setPid(1111);
-        phone1.setPerson(person);
-        phone2.setPerson(person);
-        person.setPhones(Arrays.asList(phone1,phone2));
+        person.setPersonId(11);
+        person.setName("Aman");
+        person.setGender("Male");
+        person.setPhone(Arrays.asList(p1,p2));
 
-
+        p1.setPerson(person);
+        p2.setPerson(person);
 
         //Now Phone should aslo know about persion it belongs to
         SessionFactory sf= new Configuration()
@@ -45,10 +41,11 @@ public class oneToMany {
 
 
         Session session=sf.openSession();
-        Transaction tf=session.beginTransaction();
+        session.persist(p1);
+        session.persist(p2);
         session.persist(person);
-        session.persist(phone1);
-        session.persist(phone2);
+        Transaction tf=session.beginTransaction();
+
         System.out.println("Data inserted Successfuly..");
         tf.commit();
         session.close();
