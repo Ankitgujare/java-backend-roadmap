@@ -1,8 +1,12 @@
 package org.example._09MappingRelationshipTheroy._10EagerandLazyFetch;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 
+@Entity
 public class Car {
+    @Id
     private int cid;
     private String brand;
     private String model;

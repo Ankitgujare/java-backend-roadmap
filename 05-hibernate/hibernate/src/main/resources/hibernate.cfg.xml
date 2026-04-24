@@ -4,7 +4,7 @@
         <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/MyDB</property>
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">1551</property>
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.formate_sql">true</property>
 
