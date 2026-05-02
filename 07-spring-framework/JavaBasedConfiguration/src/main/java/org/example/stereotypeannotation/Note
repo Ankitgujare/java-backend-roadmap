@@ -1,0 +1,16 @@
+Wheater its Java based configuration or xml base we are not haapy
+in the Configuration part here we can use Something Call stereotype Annotation
+with the help of that we can make our work so eassy
+
+with the StereoType Annotation we can talk with Spring framework
+with Our Class Metadata itself
+
+
+and all the classes which we want to be managed by the Spring Framwork
+we will add @Component Annotation and to tell Spring hey Search for those
+Classes we will use @ComponentScan which will scan the those classes
+for the Package we have those in
+
+@Component("org.example.demo")
+in Your Configuration class
+Means we dont need to write anything in our Config File

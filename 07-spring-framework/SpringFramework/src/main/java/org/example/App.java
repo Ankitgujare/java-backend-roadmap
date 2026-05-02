@@ -17,6 +17,11 @@ public class App
         Student s1= (Student) context.getBean("student");
         s1.coding();
 
+        Student s2=(Student) context.getBean("student");
+        s2.coding();
+
+        System.out.println(s1==s2);
+
         //it will work but we are using Spring right
         //it should create an object for us..But we are doing it Currently
         //Do to get the Object with SpringFramework
