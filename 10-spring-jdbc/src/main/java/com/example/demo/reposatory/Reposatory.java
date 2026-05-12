@@ -25,14 +25,14 @@ public class Reposatory {
 
     JdbcTemplate jdbcTemplate;
     public void save(Student s1) {
-        String query="insert into student (name,roll,gender) values (?,?,?)";
+        String query="insert into studentinfo (name,roll,gender) values (?,?,?)";
        int rows= jdbcTemplate.update(query,s1.getName(),s1.getRoll(),s1.getGender());
         System.out.println(rows+" Affected");
 
     }
 
     public List<Student>findAll() {
-        String query="select * from student";
+        String query="select * from studentinfo";
 
         RowMapper<Student> mapper=new RowMapper<Student>() {
             @Override
