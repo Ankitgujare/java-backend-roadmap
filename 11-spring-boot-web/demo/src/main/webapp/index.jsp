@@ -97,7 +97,7 @@
 
     <h2>Simple Calculator</h2>
 
-    <form action="calculator.jsp" method="post" id="calculatorForm">
+   <form action="result" method="get">
 
         <label for="txtNum1">Number 1</label>
         <input

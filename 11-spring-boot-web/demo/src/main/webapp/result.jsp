@@ -1,67 +1,53 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%
-    String result = "";
-
-    if (request.getParameter("num1") != null &&
-        request.getParameter("num2") != null) {
-
-        try {
-            int num1 = Integer.parseInt(request.getParameter("num1"));
-            int num2 = Integer.parseInt(request.getParameter("num2"));
-
-            result = String.valueOf(num1 + num2);
-
-        } catch (Exception e) {
-            result = "Invalid Input";
-        }
-    }
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Simple Calculator</title>
+<title>Result Page</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    #resultContainer {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        text-align: center;
+        width: 300px;
+    }
+
+    #lblTitle {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    #lblResult {
+        font-size: 20px;
+        color: green;
+    }
+</style>
+
 </head>
 <body>
 
-    <h2>Simple Calculator</h2>
+<div id="resultContainer">
+    <div id="lblTitle">Result</div>
 
-    <form action="add" method="post" id="calculatorForm">
-
-        <label for="txtNum1">Number 1:</label>
-        <input
-            type="text"
-            id="txtNum1"
-            name="num1"
-            placeholder="Enter first number">
-
-        <br><br>
-
-        <label for="txtNum2">Number 2:</label>
-        <input
-            type="text"
-            id="txtNum2"
-            name="num2"
-            placeholder="Enter second number">
-
-        <br><br>
-
-        <button
-            type="submit"
-            id="btnAdd">
-            Add
-        </button>
-
-    </form>
-
-    <br>
-
-    <h3 id="lblResult">
-        Result: <%= result %>
-    </h3>
+    <div id="lblResult">
+        ${result}
+    </div>
+</div>
 
 </body>
 </html>
