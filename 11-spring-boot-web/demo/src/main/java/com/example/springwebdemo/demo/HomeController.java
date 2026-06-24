@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpSession;
 import org.apache.commons.logging.Log;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -31,9 +32,9 @@ public class HomeController {
     }
 
 
-    @RequestMapping("/submitUser")
+/*    @RequestMapping("/submitUser")
     public ModelAndView userInfo(
-            @RequestParam("name") String name,
+            @RequestParam("name") String name,//todo now what if we have 10 Parameters comming form the url In that case this will be not a Good Aproach -->Model Attribute comes in pic here
             @RequestParam("phone") String phone,
             @RequestParam("email") String email,
             ModelAndView mv) {
@@ -55,7 +56,17 @@ public class HomeController {
         System.out.println("Email: " + email);
 
         return mv;
+    }*/
+
+
+
+  @RequestMapping("/submitUser")
+    public String submitUser(Userinfo userinfo) {
+      System.out.println("Userinfo Is Called");
+        return "result";
     }
+
+
 
 
 

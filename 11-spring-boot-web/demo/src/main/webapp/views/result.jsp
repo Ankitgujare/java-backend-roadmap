@@ -45,7 +45,7 @@
     <div id="lblTitle">Result</div>
 
     <div id="lblResult">
-        ${result}
+        ${userinfo}
     </div>
 </div>
 
