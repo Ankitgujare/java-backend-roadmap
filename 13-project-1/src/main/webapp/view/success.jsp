@@ -11,11 +11,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Post Details</title>
+    <title>Job Posted Successfully</title>
 
     <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet">
 
     <style>
         body {
@@ -23,8 +23,8 @@
         }
 
         .card {
-            margin-top: 40px;
-            border-radius: 10px;
+            margin-top: 50px;
+            border-radius: 12px;
         }
 
         .card-header {
@@ -35,13 +35,19 @@
         ul {
             padding-left: 20px;
         }
+
+        li {
+            margin-bottom: 6px;
+        }
     </style>
+
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
     <div class="container">
-        <a class="navbar-brand fw-bold text-dark" href="home">
+
+        <a class="navbar-brand text-dark fw-bold" href="home">
             Telusko Job Portal
         </a>
 
@@ -50,6 +56,7 @@
             <a class="nav-link text-dark" href="viewalljobs">All Jobs</a>
             <a class="nav-link text-dark" href="addjob">Add Job</a>
         </div>
+
     </div>
 </nav>
 
@@ -70,34 +77,59 @@
             <hr>
 
             <p>
+                <strong>Post ID:</strong>
+                <%= myJobPost.getPostId() %>
+            </p>
+
+            <p>
                 <strong>Job Description:</strong><br>
                 <%= myJobPost.getPostDesc() %>
             </p>
 
             <p>
                 <strong>Required Experience:</strong>
-                <%= myJobPost.getRequiredExp() %> Years
+                <%= myJobPost.getReqExperience() %> Years
             </p>
 
-            <p><strong>Tech Stack:</strong></p>
+            <p>
+                <strong>Tech Stack:</strong>
+            </p>
 
             <ul>
+
                 <%
-                    if (myJobPost.getTechStack() != null) {
-                        for (String tech : myJobPost.getTechStack()) {
+                    if (myJobPost.getPostTechStack() != null) {
+
+                        for (String tech : myJobPost.getPostTechStack()) {
                 %>
-                    <li><%= tech %></li>
+
+                <li><%= tech %></li>
+
                 <%
                         }
+                    } else {
+                %>
+
+                <li>No Tech Stack Selected</li>
+
+                <%
                     }
                 %>
+
             </ul>
 
         </div>
 
         <div class="card-footer text-center">
-            <a href="addjob" class="btn btn-success">Add Another Job</a>
-            <a href="viewalljobs" class="btn btn-primary">View All Jobs</a>
+
+            <a href="addjob" class="btn btn-success">
+                Add Another Job
+            </a>
+
+            <a href="viewalljobs" class="btn btn-primary">
+                View All Jobs
+            </a>
+
         </div>
 
     </div>
